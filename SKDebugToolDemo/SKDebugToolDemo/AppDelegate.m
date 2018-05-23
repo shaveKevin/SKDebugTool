@@ -21,9 +21,7 @@
     // Override point for customization after application launch.
 #if DEBUG
     [[SKDebugTool shareInstance] setMainColor:[UIColor redColor]];
-    [[SKDebugTool shareInstance] enableDebugMode];
-//    [[JxbDebugTool shareInstance] setRequestListPath:@"PTRequestList.plist"];
-    
+    [[SKDebugTool shareInstance] enableDebugMode];    
 #endif
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor clearColor];
