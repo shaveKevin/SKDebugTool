@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C39310120B53555005FCF55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39310020B53555005FCF55 /* AppDelegate.m */; };
+		2C39310420B53555005FCF55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39310320B53555005FCF55 /* ViewController.m */; };
+		2C39310920B53557005FCF55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C39310820B53557005FCF55 /* Assets.xcassets */; };
+		2C39310C20B53557005FCF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C39310A20B53557005FCF55 /* LaunchScreen.storyboard */; };
+		2C39310F20B53557005FCF55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39310E20B53557005FCF55 /* main.m */; };
+		2C39312F20B54059005FCF55 /* SKNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39311720B54059005FCF55 /* SKNetWorkRequest.m */; };
+		2C39313020B54059005FCF55 /* SKStaticNewsList_request.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39311B20B54059005FCF55 /* SKStaticNewsList_request.m */; };
+		2C39313320B54059005FCF55 /* SKStaticNewsListResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39312020B54059005FCF55 /* SKStaticNewsListResult.m */; };
+		2C39313420B54059005FCF55 /* SKStaticNewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39312120B54059005FCF55 /* SKStaticNewsList.m */; };
+		2C39313620B54059005FCF55 /* SKStaticNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39312420B54059005FCF55 /* SKStaticNewsListModel.m */; };
+		2C39313820B54059005FCF55 /* SKResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39312B20B54059005FCF55 /* SKResult.m */; };
+		EB38DEC457E7C770930DEE7C /* libPods-SKDebugToolDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AB78B15C0767D81FA0243B /* libPods-SKDebugToolDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05AB78B15C0767D81FA0243B /* libPods-SKDebugToolDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKDebugToolDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05FD909F0EF4AB26B6724B61 /* Pods-SKDebugToolDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKDebugToolDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKDebugToolDemo/Pods-SKDebugToolDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2C3930FC20B53555005FCF55 /* SKDebugToolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKDebugToolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3930FF20B53555005FCF55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2C39310020B53555005FCF55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2C39310220B53555005FCF55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2C39310320B53555005FCF55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2C39310820B53557005FCF55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C39310B20B53557005FCF55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C39310D20B53557005FCF55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C39310E20B53557005FCF55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C39311620B54059005FCF55 /* SKNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetWorkRequest.h; sourceTree = "<group>"; };
+		2C39311720B54059005FCF55 /* SKNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetWorkRequest.m; sourceTree = "<group>"; };
+		2C39311B20B54059005FCF55 /* SKStaticNewsList_request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStaticNewsList_request.m; sourceTree = "<group>"; };
+		2C39311D20B54059005FCF55 /* SKStaticNewsList_request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStaticNewsList_request.h; sourceTree = "<group>"; };
+		2C39311E20B54059005FCF55 /* SKStaticNewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStaticNewsListModel.h; sourceTree = "<group>"; };
+		2C39312020B54059005FCF55 /* SKStaticNewsListResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStaticNewsListResult.m; sourceTree = "<group>"; };
+		2C39312120B54059005FCF55 /* SKStaticNewsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStaticNewsList.m; sourceTree = "<group>"; };
+		2C39312420B54059005FCF55 /* SKStaticNewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStaticNewsListModel.m; sourceTree = "<group>"; };
+		2C39312520B54059005FCF55 /* SKStaticNewsListResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStaticNewsListResult.h; sourceTree = "<group>"; };
+		2C39312820B54059005FCF55 /* SKResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKResult.h; sourceTree = "<group>"; };
+		2C39312B20B54059005FCF55 /* SKResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKResult.m; sourceTree = "<group>"; };
+		2C39312E20B54059005FCF55 /* SKStaticNewsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStaticNewsList.h; sourceTree = "<group>"; };
+		3651EE0030F433C003847CB7 /* Pods-SKDebugToolDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKDebugToolDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKDebugToolDemo/Pods-SKDebugToolDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C3930F920B53555005FCF55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB38DEC457E7C770930DEE7C /* libPods-SKDebugToolDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C3930F320B53555005FCF55 = {
+			isa = PBXGroup;
+			children = (
+				2C3930FE20B53555005FCF55 /* SKDebugToolDemo */,
+				2C3930FD20B53555005FCF55 /* Products */,
+				EDA881A3C08F95CB6BA022DA /* Pods */,
+				66481208906BBD3966ED4BF0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C3930FD20B53555005FCF55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C3930FC20B53555005FCF55 /* SKDebugToolDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C3930FE20B53555005FCF55 /* SKDebugToolDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2C39311820B54059005FCF55 /* Model */,
+				2C39311520B54059005FCF55 /* SKRequest */,
+				2C3930FF20B53555005FCF55 /* AppDelegate.h */,
+				2C39310020B53555005FCF55 /* AppDelegate.m */,
+				2C39310220B53555005FCF55 /* ViewController.h */,
+				2C39310320B53555005FCF55 /* ViewController.m */,
+				2C39310820B53557005FCF55 /* Assets.xcassets */,
+				2C39310A20B53557005FCF55 /* LaunchScreen.storyboard */,
+				2C39310D20B53557005FCF55 /* Info.plist */,
+				2C39310E20B53557005FCF55 /* main.m */,
+			);
+			path = SKDebugToolDemo;
+			sourceTree = "<group>";
+		};
+		2C39311520B54059005FCF55 /* SKRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2C39311620B54059005FCF55 /* SKNetWorkRequest.h */,
+				2C39311720B54059005FCF55 /* SKNetWorkRequest.m */,
+			);
+			path = SKRequest;
+			sourceTree = "<group>";
+		};
+		2C39311820B54059005FCF55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C39311920B54059005FCF55 /* Net */,
+				2C39311E20B54059005FCF55 /* SKStaticNewsListModel.h */,
+				2C39312020B54059005FCF55 /* SKStaticNewsListResult.m */,
+				2C39312120B54059005FCF55 /* SKStaticNewsList.m */,
+				2C39312420B54059005FCF55 /* SKStaticNewsListModel.m */,
+				2C39312520B54059005FCF55 /* SKStaticNewsListResult.h */,
+				2C39312720B54059005FCF55 /* Base */,
+				2C39312E20B54059005FCF55 /* SKStaticNewsList.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C39311920B54059005FCF55 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				2C39311B20B54059005FCF55 /* SKStaticNewsList_request.m */,
+				2C39311D20B54059005FCF55 /* SKStaticNewsList_request.h */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		2C39312720B54059005FCF55 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2C39312820B54059005FCF55 /* SKResult.h */,
+				2C39312B20B54059005FCF55 /* SKResult.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		66481208906BBD3966ED4BF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05AB78B15C0767D81FA0243B /* libPods-SKDebugToolDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDA881A3C08F95CB6BA022DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3651EE0030F433C003847CB7 /* Pods-SKDebugToolDemo.debug.xcconfig */,
+				05FD909F0EF4AB26B6724B61 /* Pods-SKDebugToolDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C3930FB20B53555005FCF55 /* SKDebugToolDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C39311220B53557005FCF55 /* Build configuration list for PBXNativeTarget "SKDebugToolDemo" */;
+			buildPhases = (
+				25F0689588230D1974CE67C3 /* [CP] Check Pods Manifest.lock */,
+				2C3930F820B53555005FCF55 /* Sources */,
+				2C3930F920B53555005FCF55 /* Frameworks */,
+				2C3930FA20B53555005FCF55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKDebugToolDemo;
+			productName = SKDebugToolDemo;
+			productReference = 2C3930FC20B53555005FCF55 /* SKDebugToolDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C3930F420B53555005FCF55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = shavekevin;
+				TargetAttributes = {
+					2C3930FB20B53555005FCF55 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2C3930F720B53555005FCF55 /* Build configuration list for PBXProject "SKDebugToolDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C3930F320B53555005FCF55;
+			productRefGroup = 2C3930FD20B53555005FCF55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C3930FB20B53555005FCF55 /* SKDebugToolDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C3930FA20B53555005FCF55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C39310C20B53557005FCF55 /* LaunchScreen.storyboard in Resources */,
+				2C39310920B53557005FCF55 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25F0689588230D1974CE67C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SKDebugToolDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C3930F820B53555005FCF55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C39313320B54059005FCF55 /* SKStaticNewsListResult.m in Sources */,
+				2C39310420B53555005FCF55 /* ViewController.m in Sources */,
+				2C39313420B54059005FCF55 /* SKStaticNewsList.m in Sources */,
+				2C39310F20B53557005FCF55 /* main.m in Sources */,
+				2C39313820B54059005FCF55 /* SKResult.m in Sources */,
+				2C39313620B54059005FCF55 /* SKStaticNewsListModel.m in Sources */,
+				2C39313020B54059005FCF55 /* SKStaticNewsList_request.m in Sources */,
+				2C39312F20B54059005FCF55 /* SKNetWorkRequest.m in Sources */,
+				2C39310120B53555005FCF55 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C39310A20B53557005FCF55 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C39310B20B53557005FCF55 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C39311020B53557005FCF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2C39311120B53557005FCF55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C39311320B53557005FCF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3651EE0030F433C003847CB7 /* Pods-SKDebugToolDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M6834L34N9;
+				INFOPLIST_FILE = SKDebugToolDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.socialapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "31b68fd2-1525-4551-be15-48c0291beb08";
+				PROVISIONING_PROFILE_SPECIFIER = com.socialappNS;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C39311420B53557005FCF55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05FD909F0EF4AB26B6724B61 /* Pods-SKDebugToolDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = M6834L34N9;
+				INFOPLIST_FILE = SKDebugToolDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.socialapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "31b68fd2-1525-4551-be15-48c0291beb08";
+				PROVISIONING_PROFILE_SPECIFIER = com.socialappNS;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C3930F720B53555005FCF55 /* Build configuration list for PBXProject "SKDebugToolDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C39311020B53557005FCF55 /* Debug */,
+				2C39311120B53557005FCF55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C39311220B53557005FCF55 /* Build configuration list for PBXNativeTarget "SKDebugToolDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C39311320B53557005FCF55 /* Debug */,
+				2C39311420B53557005FCF55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C3930F420B53555005FCF55 /* Project object */;
+}
