@@ -11,12 +11,13 @@
 #import "SKRequestDataSource.h"
 
 @interface SKRequestResponseVC ()
-{
-    UITextView   *txt;
-    UIImageView  *img;
-    
-}
-@property (nonatomic, strong) NSString    *contentString;
+
+@property (nonatomic, strong) NSString*contentString;
+
+@property (nonatomic, strong) UITextView   *txt;
+
+@property (nonatomic, strong) UIImageView   *img;
+
 @end
 
 @implementation SKRequestResponseVC
@@ -31,7 +32,9 @@
     [btnclose setTitleColor:[SKDebugTool shareInstance].mainColor forState:UIControlStateNormal];
     UIBarButtonItem *btnleft = [[UIBarButtonItem alloc] initWithCustomView:btnclose];
     self.navigationItem.leftBarButtonItem = btnleft;
-    
+    if (@available(iOS 11.0, *)) {
+        [self.txt setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
     if (!self.isImage) {
         UIButton *btnCopy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
         btnCopy.titleLabel.font = [UIFont systemFontOfSize:13];
@@ -41,11 +44,11 @@
         UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnCopy];
         self.navigationItem.rightBarButtonItem = btnright;
         
-        txt = [[UITextView alloc] initWithFrame:self.view.bounds];
-        [txt setEditable:NO];
-        txt.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
-        txt.font = [UIFont systemFontOfSize:13];
-        txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.txt = [[UITextView alloc] initWithFrame:self.view.bounds];
+        [self.txt setEditable:NO];
+        self.txt.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
+        self.txt.font = [UIFont systemFontOfSize:13];
+        self.txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         NSData* contentdata = self.data;
         if ([[SKDebugTool shareInstance] isHttpResponseEncrypt]) {
@@ -53,8 +56,8 @@
                 contentdata = [[SKDebugTool shareInstance].delegate decryptJson:self.data];
             }
         }
-        txt.text = [SKRequestDataSource prettyJSONStringFromData:contentdata];;
-        _contentString = txt.text;
+        self.txt.text = [SKRequestDataSource prettyJSONStringFromData:contentdata];;
+        _contentString = self.txt.text;
         
         NSStringDrawingOptions option = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
         
@@ -63,25 +66,25 @@
         
         NSDictionary *attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:13],
                                      NSParagraphStyleAttributeName : style};
-        CGRect r = [txt.text boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
-        txt.contentSize = CGSizeMake(self.view.bounds.size.width, r.size.height);
-        [self.view addSubview:txt];
+        CGRect r = [self.txt.text boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
+        self.txt.contentSize = CGSizeMake(self.view.bounds.size.width, r.size.height);
+        [self.view addSubview:self.txt];
     }
     else {
-        img = [[UIImageView alloc] initWithFrame:self.view.bounds];
-        img.contentMode = UIViewContentModeScaleAspectFit;
-        img.image = [UIImage imageWithData:self.data];
-        [self.view addSubview:img];
+        self.img = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        self.img.contentMode = UIViewContentModeScaleAspectFit;
+        self.img.image = [UIImage imageWithData:self.data];
+        [self.view addSubview:self.img];
     }
 }
 
 - (void)copyAction {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = [txt.text copy];
+    pasteboard.string = [self.txt.text copy];
     
-    txt.text = [NSString stringWithFormat:@"%@\n\n%@",@"复制成功！",txt.text];
+    self.txt.text = [NSString stringWithFormat:@"%@\n\n%@",@"复制成功！",self.txt.text];
     
-    __weak typeof (txt) weakTxt = txt;
+    __weak typeof (self.txt) weakTxt = self.txt;
     __weak typeof (self) wSelf = self;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

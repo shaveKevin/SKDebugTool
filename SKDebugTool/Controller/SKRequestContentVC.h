@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SKRequestContentVC : UIViewController
-@property (nonatomic,copy)NSString  *content;
+@property(nonatomic,copy) NSString  *content;
 
 @end

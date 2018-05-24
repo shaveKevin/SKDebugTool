@@ -13,9 +13,13 @@
 #import "SKRequestContentVC.h"
 #import "SKRequestResponseVC.h"
 @interface SKRequestDetailVC ()<UITableViewDataSource,UITableViewDelegate>
+
 @property(nonatomic,strong)UITableView  *tableView;
-@property(nonatomic,strong)NSArray      *listData;
-@property (nonatomic,copy) NSArray *detailTitles;
+
+@property(nonatomic,copy) NSArray      *listData;
+
+@property(nonatomic,copy)   NSArray      *detailTitles;
+
 @end
 
 @implementation SKRequestDetailVC

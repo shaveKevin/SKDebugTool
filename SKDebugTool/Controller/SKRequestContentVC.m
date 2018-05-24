@@ -10,7 +10,9 @@
 #import "SKDebugTool.h"
 
 @interface SKRequestContentVC ()
+
 @property (nonatomic, strong)UITextView *txt;
+
 @end
 
 @implementation SKRequestContentVC
@@ -40,7 +42,9 @@
     self.txt.font = [UIFont systemFontOfSize:13];
     self.txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.txt.text = self.content;
-    
+    if (@available(iOS 11.0, *)) {
+        [self.txt setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
     [self.view addSubview:self.txt];
     
     NSStringDrawingOptions option = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
