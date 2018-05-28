@@ -15,7 +15,9 @@ pod 'SKDebugTool' ,:configurations => ['Debug']
     ........
 
 #if DEBUG
-    [[SKDebugTool shareInstance] setMainColor:[UIColor redColor]];
+    [SKDebugTool shareInstance].specialHeaders = @[@"requet specialHeaders"];
+    // eg: rquest url is  https:localhostL:18080?requestParame=xxxxxxx?xxxxxxx
+    // so you can add header to  specialHeaders just like  [SKDebugTool shareInstance].specialHeaders = @[@"requestHeaders"];
     [[SKDebugTool shareInstance] enableDebugMode];
 #endif
 ........
