@@ -33,23 +33,24 @@
     btnclose.titleLabel.font = [UIFont systemFontOfSize:15];
     [btnclose setTitle:@"返回" forState:UIControlStateNormal];
     [btnclose addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    [btnclose setTitleColor:[SKDebugTool shareInstance].mainColor forState:UIControlStateNormal];
+    [btnclose setTitleColor:[SKDebugTool shareInstance].themeColor forState:UIControlStateNormal];
     UIBarButtonItem *btnleft = [[UIBarButtonItem alloc] initWithCustomView:btnclose];
     self.navigationItem.leftBarButtonItem = btnleft;
     
-    
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds)-64) style:UITableViewStyleGrouped];
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    [self.view addSubview:self.tableView];
     if (@available(iOS 11.0, *)) {
         [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
         self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.estimatedSectionFooterHeight = 0;
         self.tableView.estimatedRowHeight = 0;
     }
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.tableFooterView = [UIView new];
+    [self.view addSubview:self.tableView];
+
 }
 
 - (void)backAction {

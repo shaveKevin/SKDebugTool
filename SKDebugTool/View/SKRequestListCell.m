@@ -27,7 +27,7 @@
     if (self) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, [UIScreen mainScreen].bounds.size.width - 40, 20)];
-        self.lblTitle.textColor = [SKDebugTool shareInstance].mainColor;
+        self.lblTitle.textColor = [SKDebugTool shareInstance].themeColor;
         self.lblTitle.font = [UIFont fontWithName:@"Helvetica-Bold" size:19];
         [self addSubview:self.lblTitle];
         

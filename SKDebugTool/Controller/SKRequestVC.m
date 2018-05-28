@@ -31,34 +31,34 @@
     btnclose.titleLabel.font = [UIFont systemFontOfSize:15];
     [btnclose setTitle:@"关闭" forState:UIControlStateNormal];
     [btnclose addTarget:self action:@selector(dismissViewController) forControlEvents:UIControlEventTouchUpInside];
-    [btnclose setTitleColor:[SKDebugTool shareInstance].mainColor forState:UIControlStateNormal];
+    [btnclose setTitleColor:[SKDebugTool shareInstance].themeColor forState:UIControlStateNormal];
     
     UIBarButtonItem *btnleft = [[UIBarButtonItem alloc] initWithCustomView:btnclose];
     self.navigationItem.leftBarButtonItem = btnleft;
     
     UIButton *btnclear = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    btnclear.titleLabel.font = [UIFont systemFontOfSize:13];
+    btnclear.titleLabel.font = [UIFont systemFontOfSize:15];
     [btnclear setTitle:@"清空" forState:UIControlStateNormal];
     [btnclear addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
-    [btnclear setTitleColor:[SKDebugTool shareInstance].mainColor forState:UIControlStateNormal];
+    [btnclear setTitleColor:[SKDebugTool shareInstance].themeColor forState:UIControlStateNormal];
     
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnclear];
     self.navigationItem.rightBarButtonItem = btnright;
-    
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    self.tableView.frame = CGRectMake(0, 64, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds)-64-49);
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:self.tableView];
     if (@available(iOS 11.0, *)) {
         [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
         self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.estimatedSectionFooterHeight = 0;
         self.tableView.estimatedRowHeight = 0;
     }
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.tableView.tableFooterView = [UIView new];
+    [self.view addSubview:self.tableView];
+
     [self reloadHttp];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadHttp) name:kNotifyKeyReloadHttp object:nil];

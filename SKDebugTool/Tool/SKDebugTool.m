@@ -63,8 +63,8 @@
         self.debugWin.alpha = 0.9;
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGR:)];
         [self.debugWin addGestureRecognizer:pan];
-        if (!self.mainColor) {
-            self.mainColor = [UIColor redColor];
+        if (!self.themeColor) {
+            self.themeColor = [UIColor redColor];
         }
     }
     return self;
@@ -146,7 +146,7 @@
 }
 - (void)enableDebugMode {
     [NSURLProtocol registerClass:[SKRequestURLProtocol class]];
-//    [[JxbCrashHelper sharedInstance] install];
+//    [[SKCrashHelper sharedInstance] install];
     
     __weak typeof (self) wSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -160,21 +160,21 @@
     self.debugWin.hidden = NO;
     self.debugWin.alpha = 0.9;
     
-    [self.debugBtn setBackgroundColor:[UIColor whiteColor]];
+    [self.debugBtn setBackgroundColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]];
     self.debugBtn.layer.borderWidth = 2;
     self.debugBtn.layer.cornerRadius = 35;
     self.debugBtn.layer.masksToBounds = YES;
-    self.debugBtn.layer.borderColor = [UIColor colorWithRed:45/255.0 green:255/255.0 blue:0/255.0 alpha:1.0f].CGColor;
+    self.debugBtn.layer.borderColor = [UIColor greenColor].CGColor;
     self.debugBtn.titleLabel.font = [UIFont systemFontOfSize:10];
     [self.debugBtn setTitle:@"开始监测" forState:UIControlStateNormal];
     self.debugBtn.titleLabel.numberOfLines = 0;
-    [self.debugBtn setTitleColor:[UIColor colorWithRed:45/255.0 green:255/255.0 blue:0/255.0 alpha:1.0f] forState:UIControlStateNormal];
+    [self.debugBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [self.debugBtn addTarget:self action:@selector(showDebug) forControlEvents:UIControlEventTouchUpInside];
     [self.debugWin addSubview:self.debugBtn];
     
     self.fpsLabel = [[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
     self.fpsLabel.center = CGPointMake(_sBallWidth*0.85+self.debugWin.bounds.origin.x, _sBallWidth*0.15+self.debugWin.bounds.origin.y);
-    self.fpsLabel.backgroundColor = [UIColor colorWithRed:45/255.0 green:255/255.0 blue:0/255.0 alpha:1.0f];
+    self.fpsLabel.backgroundColor = [UIColor greenColor];
     self.fpsLabel.font = [UIFont systemFontOfSize:12];
     self.fpsLabel.textColor = [UIColor whiteColor];
     self.fpsLabel.textAlignment = NSTextAlignmentCenter;
@@ -190,19 +190,13 @@
 - (void)showDebug {
     if (!self.debugVC) {
         self.debugVC = [[SKMainDebugVC alloc] init];
+        UINavigationController* requestNav = [[UINavigationController alloc] initWithRootViewController:[SKRequestVC new]];
+        [requestNav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:self.themeColor}];
+        requestNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"请求" image:nil selectedImage:nil];
+        [requestNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:25]} forState:UIControlStateNormal];
+        [requestNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.themeColor} forState:UIControlStateSelected];
         
-        UINavigationController* nav1 = [[UINavigationController alloc] initWithRootViewController:[SKRequestVC new]];
-
-        
-        [nav1.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:self.mainColor}];
-     
-        
-        nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"请求" image:[[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-        [nav1.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor]} forState:UIControlStateNormal];
-        [nav1.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.mainColor} forState:UIControlStateSelected];
-        
-
-        self.debugVC.viewControllers = @[nav1];
+        self.debugVC.viewControllers = @[requestNav];
         UIViewController* vc = [[[UIApplication sharedApplication].delegate window] rootViewController];
         UIViewController* vc2 = vc.presentedViewController;
         [vc2?:vc presentViewController:self.debugVC animated:YES completion:nil];

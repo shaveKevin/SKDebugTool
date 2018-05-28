@@ -87,23 +87,32 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
         model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
     }else {
         NSString *str = [NSString stringWithFormat:@"%@",self.request.URL];
-        if ([str containsString:@"?queryJson="]) {
-            NSData* data = nil;
-            NSRange range = [str rangeOfString:@"?queryJson="];
-            NSString *substring = [str substringFromIndex:range.location+range.length];
-            data = [substring dataUsingEncoding:NSUTF8StringEncoding];
-            if ([[SKDebugTool shareInstance] isHttpRequestEncrypt]) {
-                if ([[SKDebugTool shareInstance] delegate] && [[SKDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
-                    data = [[SKDebugTool shareInstance].delegate decryptJson:data];
+        
+        for (NSString *specialHeader  in [SKDebugTool shareInstance].specialHeaders) {
+            
+            if ([str containsString:specialHeader]) {
+                NSData* data = nil;
+                NSRange range = [str rangeOfString:specialHeader];
+                NSString *substring = [str substringFromIndex:range.location+range.length];
+                data = [substring dataUsingEncoding:NSUTF8StringEncoding];
+                if ([[SKDebugTool shareInstance] isHttpRequestEncrypt]) {
+                    if ([[SKDebugTool shareInstance] delegate] && [[SKDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
+                        data = [[SKDebugTool shareInstance].delegate decryptJson:data];
+                    }
                 }
+                model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
+                break;
             }
-            model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
         }
     }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)self.response;
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
     model.responseData = self.data;
     model.isImage = [self.response.MIMEType rangeOfString:@"image"].location != NSNotFound;
+    NSString *absoluteString = self.request.URL.absoluteString.lowercaseString;
+    if ([absoluteString hasSuffix:@".jpg"] || [absoluteString hasSuffix:@".jpeg"] || [absoluteString hasSuffix:@".png"] || [absoluteString hasSuffix:@".gif"]) {
+        model.isImage = YES;
+    }
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - self.startTime];
     model.startTime = [NSString stringWithFormat:@"%fs",self.startTime];
     [[SKRequestDataSource shareInstance] addHttpRequset:model];

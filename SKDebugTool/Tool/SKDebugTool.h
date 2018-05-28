@@ -23,7 +23,7 @@
 /**
  *  主色调
  */
-@property (nonatomic, copy)     UIColor     *mainColor;
+@property (nonatomic, copy)     UIColor     *themeColor;
 
 /**
  *  设置代理
@@ -53,6 +53,10 @@
  *  设置存储接口名称的plist(可为空)
  */
 @property (nonatomic, copy) NSString *requestListPath;
+/**
+ 处理一些get请求里 域名和 参数之间拼接的一些特殊的参数(字符串类型的数组)
+ */
+@property (nonatomic, copy) NSArray *specialHeaders;
 
 + (instancetype)shareInstance;
 /**

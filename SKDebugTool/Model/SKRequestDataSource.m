@@ -37,7 +37,10 @@
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
     model.responseData = data;
     model.isImage = [response.MIMEType rangeOfString:@"image"].location != NSNotFound;
-    
+    NSString *absoluteString = response.URL.absoluteString.lowercaseString;
+    if ([absoluteString hasSuffix:@".jpg"] || [absoluteString hasSuffix:@".jpeg"] || [absoluteString hasSuffix:@".png"] || [absoluteString hasSuffix:@".gif"]) {
+        model.isImage = YES;
+    }
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - request.sk_startTime.doubleValue];
     model.startTime = [NSString stringWithFormat:@"%fs",request.sk_startTime.doubleValue];
     
