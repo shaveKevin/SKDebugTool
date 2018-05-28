@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SKDebugTool"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "ios developer  debugTool"
   s.description  = <<-DESC
                    debugTool
