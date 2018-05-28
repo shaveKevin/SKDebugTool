@@ -20,7 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 #if DEBUG
-    [[SKDebugTool shareInstance] setMainColor:[UIColor redColor]];
     [[SKDebugTool shareInstance] enableDebugMode];    
 #endif
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];

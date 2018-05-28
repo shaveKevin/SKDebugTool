@@ -30,7 +30,7 @@
                 data = [[SKDebugTool shareInstance].delegate decryptJson:request.HTTPBody];
             }
         }
-        model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
+        model.requestBody = [[SKRequestDataSource prettyJSONStringFromData:data]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     model.method = httpResponse.allHeaderFields[@"Allow"];
@@ -108,7 +108,7 @@
         prettyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
     
-    prettyString = [prettyString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    prettyString = [prettyString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     return prettyString;
 }

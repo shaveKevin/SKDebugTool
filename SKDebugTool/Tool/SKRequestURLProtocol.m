@@ -84,7 +84,7 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
                 data = [[SKDebugTool shareInstance].delegate decryptJson:self.request.HTTPBody];
             }
         }
-        model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
+        model.requestBody = [[SKRequestDataSource prettyJSONStringFromData:data]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }else {
         NSString *str = [NSString stringWithFormat:@"%@",self.request.URL];
         
@@ -100,7 +100,7 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
                         data = [[SKDebugTool shareInstance].delegate decryptJson:data];
                     }
                 }
-                model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
+                model.requestBody = [[SKRequestDataSource prettyJSONStringFromData:data]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 break;
             }
         }

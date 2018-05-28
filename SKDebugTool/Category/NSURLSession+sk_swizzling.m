@@ -167,7 +167,7 @@
                 data = [[SKDebugTool shareInstance].delegate decryptJson:req.HTTPBody];
             }
         }
-        model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
+        model.requestBody = [[SKRequestDataSource prettyJSONStringFromData:data]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }else {
         NSString *str = [NSString stringWithFormat:@"%@",req.URL];
         for (NSString *specialHeader  in [SKDebugTool shareInstance].specialHeaders) {
@@ -181,7 +181,7 @@
                         data = [[SKDebugTool shareInstance].delegate decryptJson:data];
                     }
                 }
-                model.requestBody = [SKRequestDataSource prettyJSONStringFromData:data];
+                model.requestBody = [[SKRequestDataSource prettyJSONStringFromData:data]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 break;
             }
         }
