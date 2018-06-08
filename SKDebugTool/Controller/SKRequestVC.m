@@ -110,7 +110,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifer = @"httpcell";
+    static NSString *identifer = @"httpcellIdentifier";
     SKRequestListCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     if (!cell) {
         cell = [[SKRequestListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifer];

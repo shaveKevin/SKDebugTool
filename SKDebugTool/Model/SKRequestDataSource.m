@@ -108,8 +108,6 @@
         prettyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
     
-//    prettyString = [prettyString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
     return prettyString;
 }
 @end
