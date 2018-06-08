@@ -35,18 +35,23 @@
     [btnCopy setTitleColor:[SKDebugTool shareInstance].themeColor forState:UIControlStateNormal];
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnCopy];
     self.navigationItem.rightBarButtonItem = btnright;
-    if (@available(iOS 11.0, *)) {
-        [self.txt setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }
+  
     self.txt = [[UITextView alloc] initWithFrame:self.view.bounds];
+    if (@available(iOS 11.0, *)) {
+        [self.txt setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentAutomatic];
+    }
     [self.txt setEditable:NO];
     self.txt.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
     self.txt.font = [UIFont systemFontOfSize:15];
     self.txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.txt.text = self.content;
-
     [self.view addSubview:self.txt];
-    
+    [self.view addConstraints:@[
+                                [NSLayoutConstraint constraintWithItem:self.txt attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.txt attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.txt attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.txt attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]
+                                ]];
     NSStringDrawingOptions option = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
     
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];

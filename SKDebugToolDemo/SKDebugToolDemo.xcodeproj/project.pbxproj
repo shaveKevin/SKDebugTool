@@ -387,17 +387,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = M6834L34N9;
+				DEVELOPMENT_TEAM = M79YS8WCB4;
 				INFOPLIST_FILE = SKDebugToolDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.socialapp;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.tocure.pt.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "31b68fd2-1525-4551-be15-48c0291beb08";
-				PROVISIONING_PROFILE_SPECIFIER = com.socialappNS;
+				PROVISIONING_PROFILE = "c4512110-cebc-4365-ab5b-9db49d5f016f";
+				PROVISIONING_PROFILE_SPECIFIER = TocurePTDevelop;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -408,17 +408,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = M6834L34N9;
+				DEVELOPMENT_TEAM = M79YS8WCB4;
 				INFOPLIST_FILE = SKDebugToolDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.socialapp;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.tocure.pt.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "31b68fd2-1525-4551-be15-48c0291beb08";
-				PROVISIONING_PROFILE_SPECIFIER = com.socialappNS;
+				PROVISIONING_PROFILE = "c4512110-cebc-4365-ab5b-9db49d5f016f";
+				PROVISIONING_PROFILE_SPECIFIER = TocurePTDevelop;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

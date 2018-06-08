@@ -22,6 +22,7 @@
 #if DEBUG
     [[SKDebugTool shareInstance] enableDebugMode];    
 #endif
+
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor clearColor];
     ViewController *vc = [[ViewController alloc]init];
