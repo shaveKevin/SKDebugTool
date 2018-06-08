@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'SKDebugTool/**/*.{h,m}'
   s.public_header_files = 'SKDebugTool/**/*.{h}'
-  s.source       = { :git => "https://github.com/shaveKevin/SKDebugTool.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/shaveKevin/SKDebugTool.git", :tag => "0.0.4" }
   s.frameworks = 'Foundation'
 end
