@@ -25,5 +25,16 @@ pod 'SKDebugTool' ,:configurations => ['Debug']
 ```
 使用过程中出现问题请及时issue
 后续会继续为此工具更新添加新功能
+
 项目原地址：
 https://github.com/JxbSir/JxbDebugTool
+
+
+## 后续需要添加的功能有：
+
+ ### 接口的过滤功能
+ ### 接口的搜索功能
+ ### 闪退的定位以及闪退日志的记录
+ 
+## 待优化：
+* 悬浮球拖拽在旋转VC的时候 位置错误
