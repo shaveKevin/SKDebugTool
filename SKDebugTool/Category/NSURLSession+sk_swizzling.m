@@ -191,7 +191,8 @@
     model.responseData = task.sk_responseData;
     model.isImage = [resp.MIMEType rangeOfString:@"image"].location != NSNotFound;
     NSString *absoluteString = resp.URL.absoluteString.lowercaseString;
-    if ([absoluteString hasSuffix:@".jpg"] || [absoluteString hasSuffix:@".jpeg"] || [absoluteString hasSuffix:@".png"] || [absoluteString hasSuffix:@".gif"]) {
+    // 不用是否有后缀来判断是否为图片的原因是可能有时间戳
+    if ([absoluteString containsString:@".jpg"] || [absoluteString containsString:@".jpeg"] || [absoluteString containsString:@".png"] || [absoluteString containsString:@".gif"]) {
         model.isImage = YES;
     }
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - req.sk_startTime.doubleValue];

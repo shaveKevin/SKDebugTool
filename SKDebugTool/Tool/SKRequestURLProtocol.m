@@ -110,7 +110,7 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
     model.responseData = self.data;
     model.isImage = [self.response.MIMEType rangeOfString:@"image"].location != NSNotFound;
     NSString *absoluteString = self.request.URL.absoluteString.lowercaseString;
-    if ([absoluteString hasSuffix:@".jpg"] || [absoluteString hasSuffix:@".jpeg"] || [absoluteString hasSuffix:@".png"] || [absoluteString hasSuffix:@".gif"]) {
+    if ([absoluteString containsString:@".jpg"] || [absoluteString containsString:@".jpeg"] || [absoluteString containsString:@".png"] || [absoluteString containsString:@".gif"]) {
         model.isImage = YES;
     }
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - self.startTime];

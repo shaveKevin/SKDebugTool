@@ -159,6 +159,7 @@
         }
     }
     [cell setTitle:[self.detailTitles objectAtIndex:indexPath.row] value:value];
+    cell.model = self.detail;
     return cell;
 }
 
