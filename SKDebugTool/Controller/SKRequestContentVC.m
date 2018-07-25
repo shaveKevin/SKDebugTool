@@ -67,8 +67,26 @@
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = [self.content copy];
 
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"复制成功！" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"复制成功！" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"浏览器打开", nil];
     [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            break;
+        case 1:
+        {
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:self.content]]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.content] options:nil completionHandler:^(BOOL success) {
+                }];
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)backAction {

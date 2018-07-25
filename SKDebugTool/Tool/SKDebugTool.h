@@ -24,6 +24,11 @@
  *  主色调
  */
 @property (nonatomic, copy)     UIColor     *themeColor;
+/**
+ *  异常请求颜色
+ */
+@property (nonatomic, copy)     UIColor     *requestFailedColor;
+
 
 /**
  *  设置代理

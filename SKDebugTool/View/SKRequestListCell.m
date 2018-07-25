@@ -10,7 +10,7 @@
 
 #import "SKRequestListCell.h"
 #import "SKDebugTool.h"
-
+#import "SKRequestDataSource.h"
 
 @interface SKRequestListCell()
 
@@ -42,5 +42,13 @@
 - (void)setTitle:(NSString*)title value:(NSString*)value {
     self.lblTitle.text = title;
     self.lblValue.text = value;
+}
+- (void)setModel:(SKRequestDataModel *)model {
+    _model = model;
+    if (![model.statusCode isEqualToString:@"200"]) {
+        self.lblTitle.textColor = [SKDebugTool shareInstance].requestFailedColor;
+    }else {
+        self.lblTitle.textColor = [SKDebugTool shareInstance].themeColor;
+    }
 }
 @end

@@ -57,7 +57,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.tableFooterView = [UIView new];
     [self.view addSubview:self.tableView];
     [self.view addConstraints:@[
@@ -124,6 +123,7 @@
     }
     SKRequestDataModel* model = [self.listData objectAtIndex:indexPath.row];
     [cell setTitle:model.url.host value:model.url.path];
+    cell.model = model;
     return cell;
 }
 

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SKRequestDataModel;
 @interface SKRequestListCell : UITableViewCell
 
 - (void)setTitle:(NSString*)title value:(NSString*)value;
+
+@property (nonatomic, strong) SKRequestDataModel *model;
 
 @end

@@ -64,7 +64,10 @@
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGR:)];
         [self.debugWin addGestureRecognizer:pan];
         if (!self.themeColor) {
-            self.themeColor = [UIColor redColor];
+            self.themeColor = [UIColor greenColor];
+        }
+        if (!self.requestFailedColor) {
+            self.requestFailedColor = [UIColor redColor];
         }
     }
     return self;
