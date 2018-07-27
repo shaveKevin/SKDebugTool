@@ -13,6 +13,7 @@
 #import "SKMemoryHelper.h"
 #import "SKRequestURLProtocol.h"
 #import "SKRequestVC.h"
+#import "SKAirSandboxVC.h"
 #define KB    (1024)
 #define MB    (KB * 1024)
 #define GB    (MB * 1024)
@@ -199,7 +200,14 @@
         [requestNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:25]} forState:UIControlStateNormal];
         [requestNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.themeColor} forState:UIControlStateSelected];
         
-        self.debugVC.viewControllers = @[requestNav];
+        
+        UINavigationController* sandboxtNav = [[UINavigationController alloc] initWithRootViewController:[SKAirSandboxVC new]];
+        [sandboxtNav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:self.themeColor}];
+        sandboxtNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"沙盒" image:nil selectedImage:nil];
+        [sandboxtNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:25]} forState:UIControlStateNormal];
+        [sandboxtNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.themeColor} forState:UIControlStateSelected];
+        
+        self.debugVC.viewControllers = @[requestNav,sandboxtNav];
         UIViewController* vc = [[[UIApplication sharedApplication].delegate window] rootViewController];
         UIViewController* vc2 = vc.presentedViewController;
         [vc2?:vc presentViewController:self.debugVC animated:YES completion:nil];

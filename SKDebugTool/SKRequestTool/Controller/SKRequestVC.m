@@ -44,8 +44,7 @@
     
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnclear];
     self.navigationItem.rightBarButtonItem = btnright;
-    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
-    CGFloat tabBarHeight = tabBarVC.tabBar.frame.size.height;
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     if (@available(iOS 11.0, *)) {
         [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentAutomatic];
