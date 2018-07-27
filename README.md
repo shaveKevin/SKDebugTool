@@ -1,5 +1,5 @@
 # SKDebugTool
-iOS开发中网络请求,内存，fps查看，基于JxbDebugTool进行改造
+iOS开发中网络请求,内存，fps查看以及沙盒文件实时查看可airdrop发送至电脑
 ## 开发中用cocoapod集成方式
 
 ```
@@ -15,7 +15,8 @@ pod 'SKDebugTool' ,:configurations => ['Debug']
     ........
 
 #if DEBUG
-    [SKDebugTool shareInstance].specialHeaders = @[@"requet specialHeaders"];
+
+    [SKDebugTool shareInstance].specialHeaders = @[@"requet specialHeaders"]; // optional
     // eg: rquest url is  https:localhostL:18080?requestParame=xxxxxxx?xxxxxxx
     // so you can add header to  specialHeaders just like  [SKDebugTool shareInstance].specialHeaders = @[@"requestHeaders"];
     [[SKDebugTool shareInstance] enableDebugMode];
@@ -27,8 +28,10 @@ pod 'SKDebugTool' ,:configurations => ['Debug']
 后续会继续为此工具更新添加新功能
 
 项目原地址：
+
 https://github.com/JxbSir/JxbDebugTool
 
+https://github.com/music4kid/AirSandbox
 
 ## 后续需要添加的功能有：
 
