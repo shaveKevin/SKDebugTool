@@ -1,7 +1,7 @@
 # SKDebugTool
 iOS开发中网络请求,内存，fps查看以及沙盒文件实时查看可airdrop发送至电脑
-## 开发中用cocoapod集成方式
-
+## 集成方式
+### 使用cocoapods集成
 ```
 pod 'SKDebugTool' ,:configurations => ['Debug']
 
