@@ -8,8 +8,6 @@
 
 #import "SKRequestDataSource.h"
 #import "NSURLRequest+sk_expand.h"
-#import "NSURLResponse+sk_expand.h"
-#import "NSURLSessionTask+sk_expand.h"
 #import "SKDebugTool.h"
 
 

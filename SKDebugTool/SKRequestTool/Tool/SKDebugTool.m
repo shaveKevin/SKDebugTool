@@ -151,7 +151,6 @@
 - (void)enableDebugMode {
     [NSURLProtocol registerClass:[SKRequestURLProtocol class]];
 //    [[SKCrashHelper sharedInstance] install];
-    
     __weak typeof (self) wSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [wSelf showOnStatusBar];

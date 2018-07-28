@@ -28,9 +28,6 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
 
 @implementation SKRequestURLProtocol
 #pragma mark - protocol
-+ (void)load {
-    
-}
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
     if (![request.URL.scheme isEqualToString:@"http"] &&
@@ -72,7 +69,6 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
 
 - (void)stopLoading {
     [self.connection cancel];
-    
     SKRequestDataModel* model = [[SKRequestDataModel alloc] init];
     model.url = self.request.URL;
     model.method = self.request.HTTPMethod;
