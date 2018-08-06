@@ -27,6 +27,7 @@ UITableViewDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"沙盒"];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setupData];
     [self setupUI];
 }

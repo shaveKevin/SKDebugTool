@@ -101,6 +101,10 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
             }
         }
     }
+    if (self.request.HTTPBodyStream) {
+        NSData* data = [self dataWithInputStream:self.request.HTTPBodyStream];
+        model.requestBody = [[SKRequestDataSource prettyJSONStringFromData:data]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)self.response;
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
     model.responseData = self.data;
@@ -154,5 +158,27 @@ static NSString *const myProtocolKey = @"SKRequestURLProtocol";
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [[self client] URLProtocolDidFinishLoading:self];
+}
+
+- (NSData *)dataWithInputStream:(NSInputStream *)stream
+{
+    NSMutableData * data = [NSMutableData data];
+    [stream open];
+    NSInteger result;
+    uint8_t buffer[1024]; // BUFFER_LEN can be any positive integer
+    
+    while((result = [stream read:buffer maxLength:1024]) != 0) {
+        if(result > 0) {
+            // buffer contains result bytes of data to be handled
+            [data appendBytes:buffer length:result];
+        } else {
+            // The stream had an error. You can get an NSError object using [iStream streamError]
+            if (result<0) {
+                //                [NSException raise:@"STREAM_ERROR" format:@"%@", [stream streamError]];
+                return nil;//liman
+            }
+        }
+    }
+    return data;
 }
 @end

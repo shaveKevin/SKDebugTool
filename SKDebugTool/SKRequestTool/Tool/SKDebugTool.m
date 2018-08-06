@@ -9,7 +9,6 @@
 #import "SKDebugTool.h"
 #import <UIKit/UIKit.h>
 #import "YYFPSLabel.h"
-#import "SKMainDebugVC.h"
 #import "SKMemoryHelper.h"
 #import "SKRequestURLProtocol.h"
 #import "SKRequestVC.h"
@@ -34,7 +33,7 @@
 
 @interface SKDebugTool ()
 
-@property (nonatomic, strong) SKMainDebugVC    *debugVC;
+@property (nonatomic, strong) UITabBarController    *debugVC;
 
 @property (nonatomic, strong) SKDebugWindow    *debugWin;
 @property (nonatomic, strong) UIButton          *debugBtn;
@@ -192,13 +191,12 @@
 
 - (void)showDebug {
     if (!self.debugVC) {
-        self.debugVC = [[SKMainDebugVC alloc] init];
+        self.debugVC = [[UITabBarController alloc] init];
         UINavigationController* requestNav = [[UINavigationController alloc] initWithRootViewController:[SKRequestVC new]];
         [requestNav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:self.themeColor}];
         requestNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"请求" image:nil selectedImage:nil];
         [requestNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:25]} forState:UIControlStateNormal];
         [requestNav.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.themeColor} forState:UIControlStateSelected];
-        
         
         UINavigationController* sandboxtNav = [[UINavigationController alloc] initWithRootViewController:[SKAirSandboxVC new]];
         [sandboxtNav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:self.themeColor}];
@@ -210,8 +208,7 @@
         UIViewController* vc = [[[UIApplication sharedApplication].delegate window] rootViewController];
         UIViewController* vc2 = vc.presentedViewController;
         [vc2?:vc presentViewController:self.debugVC animated:YES completion:nil];
-    }
-    else {
+    } else {
         [self.debugVC dismissViewControllerAnimated:YES completion:nil];
         self.debugVC = nil;
     }
