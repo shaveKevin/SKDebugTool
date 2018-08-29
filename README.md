@@ -41,3 +41,4 @@ https://github.com/music4kid/AirSandbox
  
 ## 待优化：
 * 悬浮球拖拽在旋转VC的时候 位置错误
+* 如果目标项目中隐藏了navigationbar，导致工具的navigationbar出不来
