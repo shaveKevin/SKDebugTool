@@ -96,7 +96,7 @@
 + (NSString *)prettyJSONStringFromData:(NSData *)data
 {
     NSString *prettyString = nil;
-    
+    if (!data) return @"";
     id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     if ([NSJSONSerialization isValidJSONObject:jsonObject]) {
         prettyString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:jsonObject options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding];
